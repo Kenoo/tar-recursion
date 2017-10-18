@@ -1,0 +1,16 @@
+{
+  "name": "@kenoo/uea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "czt",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "unzip": "^0.1.11",
+    "tar": "latest"
+  }
+}
