@@ -4,7 +4,19 @@
 
 var filePath = __dirname + "/input/2.tar";
 var destPath = __dirname + '/input/result';
-let uea = require('./lib/tar-recursion');
-//uea.extract(filePath, destPath);
-var files = uea.ls(destPath + '/matrix/data/dev_proxy/file_data');
-console.log(files);
+var uea = require('./lib/tar-recursion');
+uea.tar(filePath, destPath, function () {
+    var data = uea.extract(destPath);
+    var fn = function (mid) {
+            mid = mid && mid [0] || null;
+            if (mid) {
+                uea.tar(mid.src, mid.dst, function () {
+                    fn (data.splice(0, 1));
+                });
+            } else {
+                var ini_data =  uea.ini(destPath);
+                console.log(ini_data);
+            }
+        };
+    fn (data.splice(0, 1));
+});

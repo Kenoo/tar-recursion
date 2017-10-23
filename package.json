@@ -11,6 +11,9 @@
   "dependencies": {
     "adm-zip": "^0.4.7",
     "unzip": "^0.1.11",
-    "tar": "latest"
+    "tar": "^4.0.2"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.4"
   }
 }
